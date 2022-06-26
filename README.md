@@ -2,11 +2,11 @@
 
 **Note: broken english, newbie**
 
-Okay, actually I have so much time lately and days ago when I scrolled through my twitter timeline, I saw a lot of Zemo slander there. I don't know it's like suddenly a bunch of people threw hatred at him. As a Zemo apologist I was kinda pissed seeing that. And then I was beginning to think, did people on twitter hate Zemo during The Falcon and the Winter Soldier aired too? Because you know there’s no such hatred at him on my twitter timeline during that time. And now I am curious. Was he actually hated? or loved? So I have an idea to know what actually happened at that time by doing sentiment analysis to determine whether Zemo was hated or loved by MCU stan twitter during The Falcon and the Winter Soldier aired. LMAOOOO what a background. But before starting it, actually I am not too sure if this is the right approach to solve this or not. But nevermind. I am just doing it for fun and no one will read this too tho.
+Okay, actually I have so much time lately and days ago when I scrolled through my twitter timeline, I saw a lot of Zemo slander there. I don't know it's like suddenly a bunch of people threw hatred at him. As a Zemo apologist I was kinda pissed seeing that. And then I was beginning to think, did people on twitter hate Zemo during The Falcon and the Winter Soldier aired too? Because you know there's no such hatred at him on my twitter timeline during that time. And now I am curious. Was he actually hated? or loved? So I have an idea to know what actually happened at that time by doing sentiment analysis to determine whether Zemo was hated or loved by MCU stan twitter during The Falcon and the Winter Soldier aired.
 
 ## Data Collecting
 
-The data was collected from twitter data using `snscrape` library on python. It contains IDs, user, date, the content of tweet, language, retweet count, like count and quote count. I managed to retrieve 110.034 tweets (all languages) by using `zemo` as the keyword and only fetching the tweets from 18 March, a day before TFATWS aired, until 08 May which was the last time Marvel gave us Zemo content (BRING HIM BACK). It took me hours and three failures to collect all these tweets. Yeah, it’s frustrating. And by the way, 110.034 is a lot of tweets but it needs to be cleaned first because it still contains so much incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data.
+The data was collected from twitter data using `snscrape` library on python. It contains IDs, user, date, the content of tweet, language, retweet count, like count and quote count. I managed to retrieve 110.034 tweets (all languages) by using `zemo` as the keyword and only fetching the tweets from 18 March, a day before TFATWS aired, until 08 May which was the time marvel released The Making of The Falcon and the Winter Soldier. And by the way, 110.034 is a lot of tweets but it needs to be cleaned first because it still contains so much incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data.
 
 ![Screenshot from 2021-09-17 12-39-40](https://user-images.githubusercontent.com/60166588/133730375-fe4b9c1e-8dc4-4dfe-8f6a-674e51460e55.png)
 
@@ -16,13 +16,13 @@ Before doing the sentiment analysis, first I am gonna show the statistics of twe
 
 ![tweet per week](https://user-images.githubusercontent.com/60166588/133727583-cf68e905-73d8-49ea-a7ba-e0d5a5a6c9cb.png)
 
-Nah of course it peaked in the third week, the week when episode 3 aired. It’s a cultural reset you know. Especially when Marvel released the Zemo cut and upload that one hour dancing Zemo on youtube. God it's hillarious I miss that era not gonna lie. And also, look at the stats in the sixth week that beat the stats in the fifth week when he only appeared for 15 seconds. King.
+Nah of course it peaked in the third week, the week when episode 3 aired and when Marvel released the Zemo cut and upload that one hour dancing Zemo on youtube. It's interesting how the stats in the sixth week beat the stats in the fifth week when Zemo only appeared for 15 seconds. King.
 
 And this is the most active users during that time. These people were whipped. The highest one was like tweeting about Zemo ten times a day 😭
 
 ![Screenshot from 2021-09-17 11-58-19_2](https://user-images.githubusercontent.com/60166588/133761107-8def0df0-1f3d-4b85-8df2-da7453f15421.png)
 
-Also the most liked tweets. Pretend Daniel's stubble there ._.
+Also the most liked tweets. 
 
 ![InShot_20210917_124129484_2](https://user-images.githubusercontent.com/60166588/133731585-e955b553-4ca3-43a4-b0cb-a47569537153.jpg)
 
@@ -65,7 +65,7 @@ Neutral (generating the tweets that have compound score = 0)
 Negative (generating the tweets that have compound score ≤ -0.9)
 ![Screenshot from 2021-09-17 14-51-45](https://user-images.githubusercontent.com/60166588/133745753-87b235e8-10ce-4d9d-a950-d0430ccdec49.png)
 
-And these are the word cloud for both positive sentiment tweets and negative sentiment tweets. I exclude zemo, bucky, sam, john and walker because I think these are noises. But I don't know why zemo is still there 😭
+And these are the word cloud for both positive sentiment tweets and negative sentiment tweets.
 
 ![Screenshot from 2021-09-17 15-30-38](https://user-images.githubusercontent.com/60166588/133751408-751dc3de-130f-4c9c-8c75-70e4222def8b.png)
 
